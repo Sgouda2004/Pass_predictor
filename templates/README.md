@@ -1,0 +1,1 @@
+This is a mini project build for the purpose of understanding how ML madels are built and how front end is connected to backend using flask
