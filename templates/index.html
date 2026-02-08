@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Pass Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: linear-gradient(360deg, #ff6ec4, #7873f5, #4facfe, #43e97b);
+            background-size: 800% 800%;
+            animation: gradientMove 12s ease infinite;
+            color: #fff;
+            text-align: center;
+            margin-top: 100px;
+        }
+        form {
+            background: rgb(150, 235, 236);
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎓 Student Pass Prediction</h1>
+    <form method="POST" action="/predict">
+        <input type="text" name="hours" placeholder="Hours Studied" required><br>
+        <input type="text" name="attendance" placeholder="Attendance (%)" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
